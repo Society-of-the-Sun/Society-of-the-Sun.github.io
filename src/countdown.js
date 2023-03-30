@@ -12,16 +12,16 @@
       mm = String(today.getMonth() + 1).padStart(2, "0"),
       yyyy = today.getFullYear(),
       nextYear = yyyy + 1,
-      dayMonth = "09/30/",
-      birthday = dayMonth + yyyy;
+      dayMonth = "04/03/",
+      eventDate = dayMonth + yyyy;
   
   today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear;
+  if (today > eventDate) {
+    eventDate = dayMonth + nextYear;
   }
   //end
   
-  const countDown = new Date(birthday).getTime(),
+  const countDown = new Date(eventDate).getTime(),
       x = setInterval(function() {    
 
         const now = new Date().getTime(),
@@ -34,7 +34,7 @@
 
         //do something later when date is reached
         if (distance < 0) {
-          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("headline").innerText = "Huzzah!";
           document.getElementById("countdown").style.display = "none";
           document.getElementById("content").style.display = "block";
           clearInterval(x);
