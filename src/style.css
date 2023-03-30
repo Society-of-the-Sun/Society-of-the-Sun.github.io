@@ -1,3 +1,13 @@
+@font-face {
+  font-family: California;
+  src: url(/src/assets/Californian\ FB\ Regular.ttf);
+  /* https://fontsgeek.com/fonts/Californian-FB-Regular */
+}
+
+:root {
+  font-family: 'California', serif;
+}
+
 .container {
   /* width: 50%;
   padding: 10px; */
@@ -47,13 +57,20 @@
   flex-direction: row;
   padding: 10px;
   margin: 0;
-  border: 1px solid aliceblue;
+  /* border: 1px solid aliceblue; */
+}
+
+h1 {
+  font-family: California;
+  text-transform: none;
+  font-size: 60px;
+  margin-bottom: 0px;
 }
 
 li span {
   font-size: 40px;
 }
 
-h1, .container .emoji {
+.container .emoji {
   display: none;
 }
