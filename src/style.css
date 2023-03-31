@@ -6,33 +6,47 @@
 
 :root {
   font-family: 'California', serif;
+  --test-green: hsl(133, 26%, 35%);
+  --test-red: hsl(0, 44%, 54%);
   --main-bg-black: #0C101D;
   --main-bg-primary: #182139;
   --main-bg-secondary: #163655;
   --main-bg-third: #13456D;
   --main-bg-accent: #D69200;
+  --main-txt-heroheading: 70px;
+  --main-txt-body: 18px;
+  --main-txt-heading: 42px;
+  --main-txt-subheading: 35px;
+  --mobile-txt-heroheading: 42px;
+  --mobile-txt-body: 16px;
+  --mobile-txt-heading: 21px;
+  --mobile-txt-subheading: 18px;
   /* https://coolors.co/0c101d-163655-13456d-d69200 */
 }
 
 body {
   background-color: var(--main-bg-black);
   color: var(--main-bg-accent);
+  font-size: var(--main-txt-body);
+  overflow: hidden;
 }
 
 .container {
   /* alignment */
   text-align: center;
   align-content: center;
-  text-transform: capitalize;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  /* top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
 
   /* CSS Grid Generator: https://cssgrid-generator.netlify.app/ */
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   column-gap: 0px;
   row-gap: 0px;
@@ -47,52 +61,72 @@ body {
 
   /* color styling */
   /* background-color: var(--main-bg-secondary); */
-  padding: 20px;
+  /* padding: 20px;
   border-radius: 3px;
-  /* border: 5px solid var(--main-bg-accent); */
+  border: 5px solid var(--main-bg-accent); */
 
-  /* background-color: hsl(0, 44%, 54%); */
+  /* background-color: var(--test-red); */
   /* grid-area: 2 / 2/ 3 / 5; */
-  grid-area: 2 / 1 / 3 / 6;
+  /* grid-area: 2 / 1 / 3 / 6; */
+  grid-area: 2 / 1 / 3 / 4;
 }
 
 .container ul {
   /* content */
-  font-size: medium;
   grid-column: 2;
   display: flex;
+  text-transform: lowercase;
   /* styling */
   justify-content: center;
   margin-bottom: 0;
   padding: 0;
-  /* background-color: hsl(133, 26%, 35%); */
-  
+  /* testing */
+  /* border: var(--test-green) solid 3px; */
+  /* background-color: var(--test-red); */
 }
 
 .container li {
   list-style-type: none;
   flex: 1 1 0;
-  width: 115px;
+  width: 3rem;
   flex-direction: row;
   padding: 10px;
   margin: 5px;
-  /* background-color: var(--main-bg-third); */
-  /* border: 1px solid aliceblue; */
+  /* testing */
+  /* border: var(--test-green) solid 3px; */
+}
+
+.container span {
+  font-size: var(--main-txt-subheading);
 }
 
 h1 {
   font-family: California;
-  text-transform: none;
   /* font-size: 9vw; */
   white-space: nowrap;
-  font-size: 5rem;
+  font-size: var(--main-txt-heroheading);
   margin: 0px;
-}
-
-li span {
-  font-size: 40px;
 }
 
 .container .emoji {
   display: none;
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: var(--mobile-txt-heroheading);
+  }
+  .container span {
+    font-size: var(--mobile-txt-heading);
+  }
+  .container p {
+    font-size: var(--mobile-txt-body);
+  }
+  .container li {
+    margin: 0px;
+    padding: 0px;
+    flex: 0 0 1;
+    width: 3rem;
+    max-width: 115px;
+  }
 }
